@@ -124,3 +124,13 @@ STATIC_URL = '/static/'
 
 #crispy_forms config
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#Media url root
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+#Default landing page after Login
+LOGIN_REDIRECT_URL = 'homepage'
+
+#Default login page
+LOGIN_URL = 'login-page'

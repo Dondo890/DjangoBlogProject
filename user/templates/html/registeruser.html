@@ -1,14 +1,17 @@
 {% extends 'html/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+  <form method="POST">
+    <div class="card">
+      <h5 class="card-header">Register form</h5>
+      <div class="card-body">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-primary" type="submit" name="submit">Sign up</button>
+        <br>
+        <p>Already have an account? <a href="{% url 'login-page' %}">Click here</a> to login.</p>
+      </div>
 
-  <div class="card">
-    <h5 class="card-header">Register form</h5>
-    <div class="card-body">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button class="btn btn-primary" type="submit" name="submit">Sign up</button>
     </div>
-  </div>
-
+  </form>
 {% endblock %}
