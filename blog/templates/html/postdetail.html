@@ -2,12 +2,16 @@
 {% block content %}
   <div class="card">
     <div class="card-header">
-      <img height="100" width="100" class="float-left rounded-circle" src="{{ object.author.profile.image.url }}" alt="Profile Picture">
+      <img height="90" width="90" class="float-left rounded-circle" src="{{ object.author.profile.image.url }}" alt="Profile Picture">
     </div>
     <div class="card-body">
+      {% if object.author == user %}
+        <a class="btn btn-secondary" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-danger" href="{% url 'post-delete' object.id %}">Delete</a>
+      {% endif %}
       <h5 class="article-title">{{ object.title }}</h5>
       <p class="card-text">{{ object.post }}</p>
-      <small>{{ object.date|date:"Y-M-d h:i A" }}</small>
+      <small>{{ object.date|date:"Y-M-d h:i A" }}</small
     </div>
   </div>
 {% endblock content %}

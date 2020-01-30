@@ -3,7 +3,7 @@
 {% block content %}
   <form method="post">
     <div class="card">
-      <h5 class="card-header">Login form</h5>
+      <h5 class="card-header">Post form</h5>
       <div class="card-body">
         {% csrf_token %}
         {{ form|crispy }}
